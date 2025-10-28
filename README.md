@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Betalaktam Penisilin - PT Meprofarm Pharmaceutical Industries</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -64,5 +65,20 @@
 
   <script src="script.js"></script>
 </body>
-
 </html>
+let likeCount = 0;
+document.getElementById("likeBtn").addEventListener("click", () => {
+  likeCount++;
+  document.getElementById("likeCount").textContent = likeCount;
+});
+
+document.getElementById("commentBtn").addEventListener("click", () => {
+  const commentInput = document.getElementById("commentInput");
+  const commentList = document.getElementById("commentList");
+  if (commentInput.value.trim() !== "") {
+    const li = document.createElement("li");
+    li.textContent = commentInput.value;
+    commentList.appendChild(li);
+    commentInput.value = "";
+  }
+});
